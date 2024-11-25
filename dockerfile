@@ -16,4 +16,11 @@ RUN go build -o main .
 # Use the working directory in the final container
 WORKDIR /app 
 
+# Copy the built application from the builder stage 
+COPY --from=builder /app/main .
 
+# Expose the port on the application runs
+EXPOSE 8080
+
+# Command to run the executable 
+CMD ["./main"]
