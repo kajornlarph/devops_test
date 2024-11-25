@@ -17,7 +17,7 @@ RUN go build -o main .
 WORKDIR /app 
 
 # Copy the built application from the builder stage 
-COPY --from=builder /app/main .
+# COPY --from=builder /app/main .
 
 # Expose the port on the application runs
 EXPOSE 8080
