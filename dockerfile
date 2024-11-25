@@ -1,5 +1,6 @@
 # Use an Golang image as base image for buildimg the applicaiton
-FROM golang:1.23-alpine
+#FROM golang:1.23-alpine
+FROM docker.io/library/golang:1.23-alpine
 
 # Set current working directory the contaniner
 WORKDIR /app
