@@ -13,7 +13,6 @@ RUN go mod dowload && go mod verify
 # Copy the rest the application 
 COPY . . 
 
-
 # Build the GO application 
 RUN go build -v -o /app . 
 
