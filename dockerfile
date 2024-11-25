@@ -1,5 +1,5 @@
 # Use an Golang image as base image for buildimg the applicaiton
-FROM golang:1.21-alpine
+FROM golang:1.23
 
 # Set current working directory the contaniner
 WORKDIR /app
