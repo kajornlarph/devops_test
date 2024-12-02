@@ -1,6 +1,8 @@
 # devops_test
 test for interview
 Provide dockerfile support program Golang
+![Screenshot 2024-12-02 at 17 26 37](https://github.com/user-attachments/assets/104f37ea-821f-4743-a920-aa0422677ea2)
+
 Provide terraform senario auto 
 Provide region on gcp
 ![Screenshot 2024-12-02 at 09 55 20](https://github.com/user-attachments/assets/c74645c5-f70b-479d-af67-3ec650711b12)
