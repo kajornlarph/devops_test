@@ -24,13 +24,12 @@
 #CMD ["app"]
 
 
-FROM golang:1.20 AS builder
+FROM golang:1.23-alpine
 WORKDIR /app
 COPY . .
 RUN go mod init myapp && go build -o myapp
 
 # Runtime stage
-FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /app/myapp .
 EXPOSE 8080
