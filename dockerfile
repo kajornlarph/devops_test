@@ -38,4 +38,4 @@ EXPOSE 8080
 
 # Ensure it's executable
 RUN chmod +x /app
-CMD ["/app"]
+CMD ["./app"]
