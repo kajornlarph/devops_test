@@ -32,7 +32,7 @@ RUN go mod init myapp && go build -o myapp
 
 # Runtime stage
 FROM alpine:latest
-WORKDIR /app
+WORKDIR /root/
 COPY --from=builder /app/myapp .
 EXPOSE 8080
 CMD ["./myapp"]
