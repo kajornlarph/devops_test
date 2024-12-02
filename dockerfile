@@ -26,7 +26,7 @@
 # Build stage
 FROM golang:1.20 AS builder
 WORKDIR /app
-COPY . .
+COPY . /app
 RUN go mod init myapp && go build -o myapp
 
 # Runtime stage
@@ -35,4 +35,7 @@ WORKDIR /app
 #COPY --from=builder /app/myapp .
 COPY --from=builder /app .
 EXPOSE 8080
-CMD ["app"]
+
+# Ensure it's executable
+RUN chmod +x /app
+CMD ["./app"]
