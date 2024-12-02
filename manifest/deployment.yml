@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: nginx:latest
+        image: gcr.io/trusty-lock-443502-e8/imagego:v1
         ports:
         - containerPort: 80
