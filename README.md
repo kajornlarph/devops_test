@@ -18,3 +18,5 @@ Subnet
 ![Screenshot 2024-12-02 at 12 11 10](https://github.com/user-attachments/assets/10c3e5c2-b6a5-41c0-b5bd-7ac6eb862b68)
 gcloud container clusters list
 ![Screenshot 2024-12-02 at 14 27 53](https://github.com/user-attachments/assets/dce00457-b1f2-421a-bd19-adcd8e70f480)
+configure identity gcloud cluster to kubeclt 
+![Screenshot 2024-12-02 at 18 11 30](https://github.com/user-attachments/assets/46b9a120-7265-4ee4-b74b-1dad33a2aef8)
