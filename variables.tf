@@ -19,5 +19,5 @@ variable "node_machine_type" {
   default = "e2-medium"
 }
 variable "node_count" {
-  default = 3
+  default = 2
 }
