@@ -4,7 +4,7 @@ variable "machine_type" {}
 
 variable "credentials_file" {}
 variable "vpc_name" {
-  default = "gke-vpc"
+  default = "default"
 }
 variable "subnet_name" {
   default = "gke-subnet"
