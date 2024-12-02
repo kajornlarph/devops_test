@@ -1,6 +1,5 @@
 # Use an Golang image as base image for buildimg the applicaiton
 #FROM golang:1.23-alpine
-#FROM docker.io/library/golang:1.23-alpine
 
 # Set current working directory the contaniner
 #WORKDIR /app
@@ -33,6 +32,7 @@ RUN go mod init myapp && go build -o myapp
 # Runtime stage
 FROM alpine:latest
 WORKDIR /root/
-COPY --from=builder /app/myapp .
+#COPY --from=builder /app/myapp .
+COPY --from=builder /app .
 EXPOSE 8080
 CMD ["./myapp"]
