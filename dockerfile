@@ -35,4 +35,4 @@ WORKDIR /app
 #COPY --from=builder /app/myapp .
 COPY --from=builder /app .
 EXPOSE 8080
-CMD ["./myapp"]
+CMD ["./app"]
