@@ -5,7 +5,7 @@ metadata:
   labels:
     app: my-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-app
@@ -14,8 +14,8 @@ spec:
       labels:
         app: my-app
     spec:
-      containers:
-      - name: my-app
+        containers:
+        - name: my-app
         image: gcr.io/trusty-lock-443502-e8/imagego:v1
         ports:
         - containerPort: 80
