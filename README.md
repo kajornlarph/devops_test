@@ -3,6 +3,9 @@ test for interview
 Provide dockerfile support program Golang
 ![Screenshot 2024-12-02 at 17 26 37](https://github.com/user-attachments/assets/104f37ea-821f-4743-a920-aa0422677ea2)
 ![Screenshot 2024-12-02 at 17 28 24](https://github.com/user-attachments/assets/8841fe4a-5624-4d7d-a512-0c11ac9085f5)
+Docker image
+![Screenshot 2024-12-02 at 17 31 09](https://github.com/user-attachments/assets/d058ac4b-f86c-4867-8845-f7059fc40f6a)
+
 Provide terraform senario auto 
 Provide region on gcp
 ![Screenshot 2024-12-02 at 09 55 20](https://github.com/user-attachments/assets/c74645c5-f70b-479d-af67-3ec650711b12)
