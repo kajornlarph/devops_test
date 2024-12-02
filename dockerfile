@@ -30,7 +30,7 @@ COPY . .
 RUN go mod init myapp && go build -o myapp
 
 # Runtime stage
-WORKDIR .
+WORKDIR /app
 COPY --from=builder /app/myapp .
 EXPOSE 8080
 CMD ["./myapp"]
