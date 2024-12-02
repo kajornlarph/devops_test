@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         GCP_CREDS = credentials('gcp-service-account-key') // Store service account key in Jenkins credentials
-        GIT_REPO = 'https://github.com/your-org/your-repo.git'
+        GIT_REPO = 'https://github.com/kajornlarph/devops_test.git'
     }
     stages {
         stage('Checkout Code') {
@@ -23,9 +23,9 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 sh '''
-                terraform apply -auto-approve -var "project_id=your-project-id" \
-                    -var "region=us-central1" \
-                    -var "cluster_name=my-gke-cluster" \
+                terraform apply -auto-approve -var "project_id=your-trusty-lock-443502-e8 " \
+                    -var "region=asia-southeast1" \
+                    -var "cluster_name=gke-cluster" \
                     -var "machine_type=e2-medium"
                 '''
             }
