@@ -24,7 +24,7 @@
 #CMD ["app"]
 
 
-FROM golang:1.23-alpine
+FROM golang:1.23-alpine AS builder
 WORKDIR /app
 COPY . .
 RUN go mod init myapp && go build -o myapp
