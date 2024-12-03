@@ -16,6 +16,6 @@ spec:
     spec:
         containers:
         - name: my-app
-        image: gcr.io/trusty-lock-443502-e8/imagego:v1
+        image: kajornlarp/appgolang:latest
         ports:
         - containerPort: 80
