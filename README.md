@@ -1,6 +1,8 @@
 # devops_test
 test for interview
-Provide dockerfile support program Golang
+1. Create a Dockerfile for a given application
+![Screenshot 2024-12-03 at 10 03 18](https://github.com/user-attachments/assets/618d511d-89c4-43a2-baa5-bc9897fdc417)
+Build dockerfile 
 ![Screenshot 2024-12-02 at 17 26 37](https://github.com/user-attachments/assets/104f37ea-821f-4743-a920-aa0422677ea2)
 ![Screenshot 2024-12-02 at 17 28 24](https://github.com/user-attachments/assets/8841fe4a-5624-4d7d-a512-0c11ac9085f5)
 Build docker image
