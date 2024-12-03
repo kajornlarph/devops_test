@@ -11,9 +11,11 @@ Build dockerfile
 Build docker image
 ![Screenshot 2024-12-02 at 17 31 09](https://github.com/user-attachments/assets/d058ac4b-f86c-4867-8845-f7059fc40f6a)
 
-Push docker image to gcp 
-![Screenshot 2024-12-02 at 17 36 33](https://github.com/user-attachments/assets/58c7730d-45cc-4f0f-b9dd-b77ccbda03e7)
-Provide terraform senario auto 
+2. Build the image using the Dockerfile and push to Docker Hub (commamd: docker build -t kajornlarp/appgolang:latest . , docker push kajornlarp/appgolang:latest)
+![Screenshot 2024-12-03 at 11 13 32](https://github.com/user-attachments/assets/ef73e92d-085c-4441-9bb9-60f13d895231)
+
+3. Create a Kustomize manifest to deploy the image from the previous step. The Kustomize should have flexibility to allow Developer to adjust values without having to rebuild the Kustomize frequently
+![Screenshot 2024-12-03 at 11 17 30](https://github.com/user-attachments/assets/4f2f864b-16f0-46ad-903d-12e275b3d105)
 
 4. Setup GKE cluster with the related resources to run GKE like VPC, Subnets
 
