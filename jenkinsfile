@@ -3,7 +3,7 @@ pipeline {
     environment {
         // กำหนดตัวแปรสภาพแวดล้อม
         GIT_REPO = 'https://github.com/kajornlarph/devops_test.git'
-        BRANCH = 'origin/main'
+        BRANCH = 'main'
     }
     stages {
         //stage('Checkout') {
