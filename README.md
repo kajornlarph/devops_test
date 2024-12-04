@@ -29,6 +29,9 @@ configure identity gcloud cluster to kubeclt
 ![Screenshot 2024-12-02 at 18 11 30](https://github.com/user-attachments/assets/46b9a120-7265-4ee4-b74b-1dad33a2aef8)
 
 5. Condition: Avoid injecting the generated GCP access keys to the application directly
+
+![Screenshot 2024-12-04 at 12 37 29](https://github.com/user-attachments/assets/3dddfccb-9014-4ccf-9888-d6fb604007ee)
+
 - gcloud container clusters update <cluster-name> \
   --workload-pool=<project-id>.svc.id.goog
 - gcloud iam service-accounts create <service-account-name>
