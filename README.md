@@ -29,3 +29,5 @@ configure identity gcloud cluster to kubeclt
 ![Screenshot 2024-12-02 at 18 11 30](https://github.com/user-attachments/assets/46b9a120-7265-4ee4-b74b-1dad33a2aef8)
 
 7. Create CICD workflow using GitOps pipeline to build and deploy application
+![Screenshot 2024-12-04 at 12 26 25](https://github.com/user-attachments/assets/347b2358-3b1d-46dd-a6b7-80556419ff6c)
+
