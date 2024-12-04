@@ -2,7 +2,7 @@ pipeline {
     agent any // ใช้ตัว agent ใดก็ได้สำหรับ pipeline นี้
     environment {
         // กำหนดตัวแปรสภาพแวดล้อม
-        GIT_REPO = 'https://github.com/username/repository.git'
+        GIT_REPO = 'https://github.com/kajornlarph/devops_test.git'
         BRANCH = 'main'
     }
     stages {
