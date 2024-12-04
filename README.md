@@ -11,8 +11,8 @@ test for interview
 4. Create a Kustomize manifest to deploy the image from the previous step. The Kustomize should have flexibility to allow Developer to adjust values without having to rebuild the Kustomize frequently
 ![Screenshot 2024-12-03 at 11 17 30](https://github.com/user-attachments/assets/4f2f864b-16f0-46ad-903d-12e275b3d105)
 
-5. Setup GKE cluster with the related resources to run GKE like VPC, Subnets
 
+5. Setup GKE cluster with the related resources to run GKE like VPC, Subnets
 Provide region on gcp
 ![Screenshot 2024-12-02 at 09 55 20](https://github.com/user-attachments/assets/c74645c5-f70b-479d-af67-3ec650711b12)
 
@@ -28,4 +28,11 @@ gcloud container clusters list
 configure identity gcloud cluster to kubeclt 
 ![Screenshot 2024-12-02 at 18 11 30](https://github.com/user-attachments/assets/46b9a120-7265-4ee4-b74b-1dad33a2aef8)
 
+5. Condition: Avoid injecting the generated GCP access keys to the application directly
+- gcloud container clusters update <cluster-name> \
+  --workload-pool=<project-id>.svc.id.goog
+- gcloud iam service-accounts create <service-account-name>
+
 7. Create CICD workflow using GitOps pipeline to build and deploy application
+![Screenshot 2024-12-04 at 12 26 25](https://github.com/user-attachments/assets/347b2358-3b1d-46dd-a6b7-80556419ff6c)
+
