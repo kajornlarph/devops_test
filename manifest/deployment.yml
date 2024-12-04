@@ -2,10 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app
-  labels:
-    app: my-app
+  namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: my-app
@@ -14,8 +13,12 @@ spec:
       labels:
         app: my-app
     spec:
-        containers:
-        - name: my-app
-        image: kajornlarp/appgolang:latest
-        ports:
-        - containerPort: 80
+      serviceAccountName: my-k8s-service-account # ระบุ Kubernetes Service Account
+      containers:
+        - name: my-container
+          image: kajornlarp/appgolang:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/var/run/secrets/google/credentials.json" # ให้ Google Cloud SDK ใช้งาน ADC (optional)
