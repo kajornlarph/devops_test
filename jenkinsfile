@@ -1,46 +1,51 @@
 pipeline {
-    agent any
+    agent any // ใช้ตัว agent ใดก็ได้สำหรับ pipeline นี้
     environment {
-        GCP_CREDS = credentials('gcp-service-account-key') // Store service account key in Jenkins credentials
-        GIT_REPO = 'https://github.com/kajornlarph/devops_test.git'
+        // กำหนดตัวแปรสภาพแวดล้อม
+        GIT_REPO = 'https://github.com/username/repository.git'
+        BRANCH = 'main'
     }
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: "${GIT_REPO}"]]])
+                echo 'Cloning repository...'
+                git branch: "${BRANCH}", url: "${GIT_REPO}"
             }
         }
-        stage('Terraform Init') {
+        stage('Install Dependencies') {
             steps {
-                sh '''
-                export GOOGLE_APPLICATION_CREDENTIALS=$GCP_CREDS
-                terraform init
-                '''
+                echo 'Installing dependencies...'
+                sh 'npm install' // ตัวอย่างการใช้ npm หากโปรเจกต์เป็น Node.js
             }
         }
-        stage('Terraform Apply') {
+        stage('Build') {
             steps {
-                sh '''
-                terraform apply -auto-approve -var "project_id=your-trusty-lock-443502-e8 " \
-                    -var "region=asia-southeast1" \
-                    -var "cluster_name=gke-cluster" \
-                    -var "machine_type=e2-medium"
-                '''
+                echo 'Building the application...'
+                sh 'npm run build' // ตัวอย่างคำสั่งการ build
             }
         }
-        stage('ArgoCD Sync') {
+        stage('Test') {
             steps {
-                sh '''
-                argocd app sync my-application --server argocd-server.example.com --auth-token $ARGOCD_TOKEN
-                '''
+                echo 'Running tests...'
+                sh 'npm test' // ตัวอย่างคำสั่งการทดสอบ
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                sh './deploy.sh' // ตัวอย่างการ deploy ด้วย script
             }
         }
     }
     post {
         always {
-            cleanWs()
+            echo 'Pipeline execution complete.'
+        }
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs for details.'
         }
     }
 }

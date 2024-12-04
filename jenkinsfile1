@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    environment {
+        GCP_CREDS = credentials('gcp-service-account-key') // Store service account key in Jenkins credentials
+        GIT_REPO = 'https://github.com/kajornlarph/devops_test.git'
+    }
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: "${GIT_REPO}"]]])
+            }
+        }
+        stage('Terraform Init') {
+            steps {
+                sh '''
+                export GOOGLE_APPLICATION_CREDENTIALS=$GCP_CREDS
+                terraform init
+                '''
+            }
+        }
+        stage('Terraform Apply') {
+            steps {
+                sh '''
+                terraform apply -auto-approve -var "project_id=your-trusty-lock-443502-e8 " \
+                    -var "region=asia-southeast1" \
+                    -var "cluster_name=gke-cluster" \
+                    -var "machine_type=e2-medium"
+                '''
+            }
+        }
+        stage('ArgoCD Sync') {
+            steps {
+                sh '''
+                argocd app sync my-application --server argocd-server.example.com --auth-token $ARGOCD_TOKEN
+                '''
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
