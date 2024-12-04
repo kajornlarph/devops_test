@@ -11,8 +11,8 @@ test for interview
 4. Create a Kustomize manifest to deploy the image from the previous step. The Kustomize should have flexibility to allow Developer to adjust values without having to rebuild the Kustomize frequently
 ![Screenshot 2024-12-03 at 11 17 30](https://github.com/user-attachments/assets/4f2f864b-16f0-46ad-903d-12e275b3d105)
 
-5. Setup GKE cluster with the related resources to run GKE like VPC, Subnets
 
+5. Setup GKE cluster with the related resources to run GKE like VPC, Subnets
 Provide region on gcp
 ![Screenshot 2024-12-02 at 09 55 20](https://github.com/user-attachments/assets/c74645c5-f70b-479d-af67-3ec650711b12)
 
